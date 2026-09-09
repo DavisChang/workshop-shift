@@ -15,8 +15,11 @@
 
 ## 實際驗證
 
+2026-09-09 使用者回報：「windows 也驗證過了，可以使用」。Windows 已有使用者實機可用確認；未提供 Windows／Python 版本、逐項操作或測試輸出，因此不列為 Windows 完整自動化測試通過。
+
 | 項目 | 指令或方法 | 實際結果 |
 |---|---|---|
+| Windows 使用者實機驗證（2026-09-09） | 使用者實際使用並回報 | 可以使用；版本與逐項測試範圍未提供 |
 | 資料測試（非完整驗證） | `python3 -B -m unittest tests.test_app -v` | `Ran 22 tests in 0.139s` / `OK` |
 | HTTP 測試（非完整驗證） | `python3 -X utf8 -B -m unittest tests.test_http -v` | `Ran 8 tests in 0.171s` / `OK` |
 | macOS / Python 3.9.6 完整套件 | `python3 -X utf8 -B -m unittest discover -s tests -v` | **`Ran 42 tests in 0.325s` / `OK`** |
@@ -35,8 +38,8 @@ Linux 使用本機既有容器映像，測試過程不下載、不連網；原�
 - **過**：Windows 啟動檔與使用說明已提供，Linux 啟動檔與說明已更新。
 - **過**：macOS 與 Linux 各自完整 42 項測試通過，沒有跳過。
 - **過**：Linux 實際啟動、非 ASCII／空白路徑、自訂 DB、本機 HTTP 與停止流程皆驗證。
-- **沒跑到**：Windows 實機執行。沒有可用 Windows 或 Wine 環境；不能把程式審查及 Linux 通過宣稱為 Windows 實測。
-- **沒跑到**：Windows 瀏覽器操作、Linux 桌面瀏覽器視覺驗證。API 測試不取代瀏覽器驗收。
+- **過（使用者確認）**：Windows 實機可以使用，2026-09-09 回報；取代原先「Windows 尚未實測」狀態。
+- **未提供逐項證據**：Windows 瀏覽器操作與完整自動化測試；Linux 桌面瀏覽器視覺驗證仍未執行。API 測試不取代瀏覽器驗收。
 
 ## 壓縮檔內容
 
@@ -46,4 +49,4 @@ Linux 使用本機既有容器映像，測試過程不下載、不連網；原�
 
 ## 最可能被挑到的弱點
 
-**Windows 尚無實機執行證據。** 已針對啟動指令、編碼、路徑與 SQLite 檔案釋放修正，但不同 Windows Python 安裝方式、終端機及防毒設定仍需要實機驗收。原排班產品限制（例如不限制跨週連續出勤）仍見 README。
+**Windows 已由使用者確認可用，但環境版本及逐項驗證範圍未記錄。** 不同 Windows Python 安裝方式、終端機及防毒設定的相容性尚未全面驗證。原排班產品限制（例如不限制跨週連續出勤）仍見 README。

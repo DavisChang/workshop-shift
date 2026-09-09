@@ -28,6 +28,8 @@
 
 ### Windows
 
+已於 2026-09-09 由使用者實機驗證並確認可以使用；環境版本與詳細驗證範圍未提供，詳見 [相容性紀錄](COMPATIBILITY.md)。
+
 安裝 Python 後，雙擊 `start.bat`，或在解壓縮目錄的 PowerShell 執行：
 
 ```powershell
