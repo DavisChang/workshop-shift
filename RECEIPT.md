@@ -65,7 +65,7 @@
 | `node --check static/app.js` | 無輸出，exit 0 | JavaScript 語法 |
 | `sh -n start.sh` | 無輸出，exit 0 | 啟動腳本語法 |
 | `PYTHONPYCACHEPREFIX=/private/tmp/workshop-pycache python3 -m py_compile app.py scheduler.py` | 無輸出，exit 0 | Python 編譯 |
-| `./start.sh` | `車間排班已啟動：http://127.0.0.1:8765` | 本機服務啟動 |
+| `./start.sh` | `工作排班系統已啟動：http://127.0.0.1:8765` | 本機服務啟動 |
 | `curl -fsS -o /private/tmp/workshop-preview.html -w '%{http_code}\n' http://127.0.0.1:8765/` | `200` | 本機首頁 HTTP 可達 |
 
 執行期間的限制與處理：

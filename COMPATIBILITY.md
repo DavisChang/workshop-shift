@@ -24,7 +24,7 @@
 | HTTP 測試（非完整驗證） | `python3 -X utf8 -B -m unittest tests.test_http -v` | `Ran 8 tests in 0.171s` / `OK` |
 | macOS / Python 3.9.6 完整套件 | `python3 -X utf8 -B -m unittest discover -s tests -v` | **`Ran 42 tests in 0.325s` / `OK`** |
 | Linux / Python 3.11.14 完整套件 | 在 Linux Docker 容器執行 `python -X utf8 -B -m unittest discover -s tests -v` | **`Ran 42 tests in 0.683s` / `OK`** |
-| Linux 真實啟動 | 複製至 `車間 SHIFT with spaces`，從其他工作目錄呼叫 `sh start.sh --port 0 --db <中文空白路徑>` | HTTP 200、API 有 10 位初始人員、SIGINT 正常停止且 exit 0 |
+| Linux 真實啟動 | 複製至含中文與空白的路徑，從其他工作目錄呼叫 `sh start.sh --port 0 --db <中文空白路徑>` | HTTP 200、API 有 10 位初始人員、SIGINT 正常停止且 exit 0 |
 | shell 語法與參數 | `sh -n start.sh`、`sh start.sh --help` | exit 0；顯示 `--port`、`--db` 選項 |
 | JavaScript 語法 | `node --check static/app.js` | 無輸出，exit 0 |
 | 啟動檔格式 | 位元組檢查 `.bat` 為 ASCII/CRLF、`.sh` 為 UTF-8/LF | PASS |

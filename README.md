@@ -1,4 +1,4 @@
-# 車間 SHIFT — Davis Chang 的車廠排班工具
+# 工作排班系統 — Davis Chang 的車廠排班工具
 
 車廠服務團隊的本機排班網站，使用 Python 標準函式庫與 SQLite，前端為原生 HTML/CSS/JavaScript。不需要 npm 安裝、雲端資料庫或網路連線。
 

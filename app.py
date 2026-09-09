@@ -310,7 +310,7 @@ def main():
     initialize(args.db)
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     server.db_path = args.db
-    print(f"車間排班已啟動：http://127.0.0.1:{server.server_port}", flush=True)
+    print(f"工作排班系統已啟動：http://127.0.0.1:{server.server_port}", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
