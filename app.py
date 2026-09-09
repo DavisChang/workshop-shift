@@ -215,6 +215,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(payload)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Robots-Tag", "noindex, nofollow")
         self.send_header("Content-Security-Policy", "default-src 'self'; style-src 'self'; script-src 'self'; frame-ancestors 'none'; base-uri 'none'")
         for key, value in (extra or {}).items():
             self.send_header(key, value)
@@ -265,7 +266,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, TypeError, OverflowError):
                 self.send(400, {"error": "日期格式無效"})
             return
-        files = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+        files = {"/about/": ("../docs/index.html", "text/html"), "/about/style.css": ("../docs/style.css", "text/css"), "/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
         if parsed.path not in files:
             self.send(404, {"error": "找不到頁面"})
             return

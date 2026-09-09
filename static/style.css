@@ -13,3 +13,5 @@
 .help-popup .secondary{font-size:11px}
 @media(max-width:760px){.topbar{gap:8px}.topbar>div:first-child{font-size:10px}.topbar>div:first-child span{margin:0 5px}#help-toggle{padding:8px;font-size:10px}.heading-actions{gap:3px}.heading-actions .help-trigger{margin-left:0}.panel-bottom{flex-wrap:wrap}.help-popup{max-height:calc(100dvh - 24px)}}
 @media print{#help-toggle,.help-trigger,.help-popup{display:none!important}}
+
+.author-footer{align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:#526454}.author-footer a{text-decoration:underline;text-underline-offset:4px}.author-footer p{margin:6px 0 0;line-height:1.8}

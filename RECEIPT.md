@@ -1,5 +1,14 @@
 # 交付收據
 
+## 2026-09-09：Git、作者與公開介紹頁
+
+- 建立 main 分支與初始版本；指定遠端為 DavisChang/workshop-shift。SQLite 使用資料不納入版本控制。
+- 新增 docs/ 靜態介紹頁，包含作者 Davis Chang、功能、客製化與公司內部部署及系統開發邀請；目前作者連結使用 GitHub 個人頁。
+- 加入標題、description、Open Graph、SoftwareApplication / Person microdata；工具頁尾連到 /about/，本機回應加上 noindex。
+- 驗證：42 項 unittest 全數通過（0.257 秒），涵蓋新增的兩個靜態路由及 noindex header；node --check 與 git diff --check 通過。HTML 檢查確認 1 個 H1、頁內連結目標存在及 SEO 欄位具備。
+- 尚未完成：瀏覽器視覺驗收、正式網址與公開部署、Search Console 收錄驗證；不宣稱已上線或取得搜尋排名。
+- MANIFEST.json 保留原始 ZIP 清單，後續版本以 Git commit 為準。
+
 ## 2026-09-09：可關閉／重開的教學提示
 
 - 修改 `static/index.html`：加入固定可見的教學總開關、單則提示視窗與關閉按鈕。

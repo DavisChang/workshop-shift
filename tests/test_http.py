@@ -58,12 +58,13 @@ class HTTPTests(unittest.TestCase):
         return self.json("/api/state?week="+self.week)
 
     def test_static_pages_and_security_headers(self):
-        for path, content_type in (("/", "text/html"), ("/app.js", "text/javascript"), ("/style.css", "text/css")):
+        for path, content_type in (("/", "text/html"), ("/about/", "text/html"), ("/about/style.css", "text/css"), ("/app.js", "text/javascript"), ("/style.css", "text/css")):
             status, headers, data = self.request(path)
             self.assertEqual(status, 200)
             self.assertTrue(headers["Content-Type"].startswith(content_type))
             self.assertIn("frame-ancestors 'none'", headers["Content-Security-Policy"])
             self.assertGreater(len(data), 200)
+            self.assertEqual(headers["X-Robots-Tag"], "noindex, nofollow")
         self.assertEqual(self.request("/../../app.py")[0], 404)
         self.assertEqual(self.request("/data/workshop.sqlite3")[0], 404)
 

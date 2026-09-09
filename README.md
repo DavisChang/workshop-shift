@@ -1,6 +1,26 @@
-# 車間 SHIFT
+# 車間 SHIFT — Davis Chang 的車廠排班工具
 
 車廠服務團隊的本機排班網站，使用 Python 標準函式庫與 SQLite，前端為原生 HTML/CSS/JavaScript。不需要 npm 安裝、雲端資料庫或網路連線。
+
+## 作者與合作
+
+**製作者：[Davis Chang](https://github.com/DavisChang)** · [GitHub 專案](https://github.com/DavisChang/workshop-shift)
+
+歡迎找我客製化排班工具、規劃部署至公司內部使用，或開發其他系統。可先介紹團隊人數、作業流程、目前痛點及期望時程，再一起確認範圍。登入、權限分級及多人內網使用屬可洽談的開發項目，目前版本尚未包含。
+
+工具頁尾有作者與服務介紹入口；可獨立公開的介紹頁位於 `docs/index.html`，本機啟動後可在 http://127.0.0.1:8765/about/ 預覽。
+
+## 公開介紹頁與 SEO
+
+僅將 **`docs/`** 部署至靜態網站服務（例如 GitHub Pages 的 `main` 分支 `/docs`）。此目錄不含員工資料、SQLite 或 API，也不需建置步驟。不要將本機排班服務直接對外公開。
+
+介紹頁包含繁體中文標題、摘要、作者、Open Graph 分享資訊、SoftwareApplication / Person 結構化資料，以及不依賴 JavaScript 的功能、合作服務與常見問題。排班工作區及本機 API 回應帶有 `noindex`；搜尋曝光應指向公開介紹頁。
+
+尚未設定正式網址或啟用公開部署。確認正式網址後，在介紹頁加入絕對網址的 canonical、`og:url`，並建立使用正式網址的 `sitemap.xml` 與 `robots.txt`，再以 Google Search Console 驗證及提交網站。網址未確認前不填假網址；SEO 設定不代表已收錄或保證排名。
+
+## Git 版本管理
+
+分支使用 `main`，遠端為 `git@github.com:DavisChang/workshop-shift.git`。SQLite 資料、環境變數與私鑰檔已列入 `.gitignore`；Git 不會備份班表資料，請另依下方資料備份說明操作。`MANIFEST.json` 與交付收據保留原始 ZIP 的紀錄，不代表後續 Git 版本的檔案雜湊。
 
 ## 啟動
 
@@ -40,7 +60,7 @@ Windows 若在 Ctrl+C 後詢問 `Terminate batch job (Y/N)?`，輸入 `Y` 並按
 
 資料預設保存在 `data/workshop.sqlite3`，重啟後仍保留。首次使用建立 3 位櫃檯、5 位技師、2 位現場接待，使用職務加編號作為可修改的初始姓名；首次點選「自動排班」建立當週計畫。
 
-**本次 ZIP 包含目前的 SQLite 資料**，解壓後會沿用既有班表、人員及請假。需要全新工作區時，使用 `--db` 指向不存在的新資料庫檔案；不必刪除原資料。
+**原始 ZIP 包含當時的 SQLite 資料；Git 儲存庫不包含資料庫**，解壓後會沿用既有班表、人員及請假。需要全新工作區時，使用 `--db` 指向不存在的新資料庫檔案；不必刪除原資料。
 
 ## 排班規則與操作
 
